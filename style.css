@@ -1,0 +1,173 @@
+/*pegando uma fonte mais bonitinha*/
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa&display=swap');
+
+*{
+    list-style: none;
+    font-family: 'Comfortaa', cursive;
+    scroll-behavior: smooth;
+}
+
+header {
+    color: white;
+    position: sticky;
+    top: 0;
+    z-index: 1;
+    background: linear-gradient(#07001a,#180053);
+    width: 100%;
+    text-align: center;
+    border-radius: 0 0 10px 10px;
+}
+
+.tituloHeader {
+    display: flex;
+    justify-content: center;
+}
+
+.tituloHeader p{
+    margin: 0;
+    cursor: pointer;
+}
+
+body {
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background:  radial-gradient(circle at bottom, #feda84 20%, #ff9b83 40%, #976393 70%, #685489, #43457f );
+    background-repeat: no-repeat;
+    min-height: 100vh;
+}
+
+main {
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    border: 2px outset #210074;
+    border-radius: 10px;
+    margin: 50px;
+}
+
+#titulo {
+    background: linear-gradient(#ff00c1 30%, #9600ff);
+    color: white;
+    text-align: center;
+    border-radius: 10px 10px 0 0;
+}
+
+#entradas {
+    width: 100%;
+    background-color: #9600ff;
+    padding: 10px 0;
+    display: flex;
+    justify-content: center;
+}
+
+#input {
+    width: 50%;
+    border-radius: 10px 0 0 10px;
+    outline: none;
+    border: none;
+    font-size: medium;
+    padding: 1px 10px;
+}
+
+#btnadd {
+    border-radius: 0 7px 7px 0;
+    background-color: #00fff9;
+    border: none;
+    cursor: pointer;
+    pointer-events: none; /*só poderá chamar a função caso ele for ativado*/
+    display: flex;
+    align-items: center;
+    opacity: 0.5;
+    transition: 0.4s ease-out;
+}
+
+#btnadd.ativado {
+    opacity: 1;
+    pointer-events: auto; /*se o botão recebeu a class "ativado" ele poderá ser clicado para chamar a função*/
+}
+
+#btnadd:hover {
+    background: #00c2bf;
+}
+
+#lista {
+    margin: 0;
+    background: linear-gradient(#9600ff, #4900ff, #0089be,#00bebb);
+    border-radius: 0 0 10px 10px;
+    padding: 0 20px 20px;
+    display: flex;
+    flex-direction: column;
+    row-gap: 2px;
+}
+
+li {
+    border: 2px outset #210074;
+    color: white;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    background-color: #00000050;
+    overflow-y: auto; /*caso o texto fique muito grande, isso garante que não irá passar para a direita como estava acontecendo antes. Edit1: Aparentemente funcionou sem isso, mas antes não estava...*/
+    position: relative;
+    padding: 1px 0;
+    overflow: hidden; /*todos os filhos que estiverem fora da área serão escondidos. Serve para dar o efeito no botão de excluir*/
+}
+
+li:hover {
+    background-color: #000000aa;
+}
+
+li.check {
+    text-decoration: line-through;
+    background-color: #FEDDBE;
+    color: black;
+}
+
+.cb {
+    cursor: pointer;
+}
+
+.lixo {
+    position: absolute;
+    right: -30px;
+    background: #cf3f3f;
+    border: none;
+    text-align: center;
+    cursor: pointer;
+    height: 100%; /*garantindo que independente da altura da li (por causa do overflow-y) o botão sempre ocupará toda a vertical*/
+    width: 30px;
+    transition: 0.4s;
+}
+
+li:hover .lixo {
+    right: 0;
+}
+
+footer {
+    margin-top: auto; /*footer vai ficar sempre no final mesmo se não tiver mais coisas para cima*/
+}
+
+footer a{
+    text-decoration: none;
+    color: black;
+}
+
+/*mudar a scrollbar porque a padrão não ficou muito legal*/
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: linear-gradient(#43457f 20%, #685489 40%, #976393 70%);
+}
+
+::-webkit-scrollbar-thumb { 
+    background: linear-gradient(#ff00c1, #9600ff, #4900ff, #0089be,#00bebb);
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(#a7007d, #5e00a1, #2d009e, #005272,#007270);
+}

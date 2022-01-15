@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Antônio Augusto Sperandio Neto">
+    <title>To Do List</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css">
+    <link rel="shortcut icon" type="image/x-icon" href="myicon.ico">
+</head>
+
+<body>
+    <header>
+        <h2 class="tituloHeader">
+            <p onclick="topo()">Minha Lista de Tarefas</p>
+        </h2>
+    </header>
+    <main>
+        <div id="titulo">
+            <h1>Tenho que fazer:</h1>
+        </div>
+        <div id="entradas">
+            <input id="input" type="text" onkeyup="ativar()" onkeypress="ativar()" placeholder="Digite uma tarefa..." autocomplete="off">
+            <button id="btnadd" onclick="adicionar()"><i class="fas fa-plus"></i></button>
+        </div>
+        <div>
+            <ul id="lista"></ul>
+        </div>
+    </main>
+    <footer>
+        <p>Created by <a href="https://github.com/NETO2112">Antônio Augusto Sperandio Neto</a></p>
+    </footer>
+</body>
+<script src="script.js"></script>
+
+</html>
